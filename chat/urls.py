@@ -18,8 +18,8 @@ from django.contrib import admin
 from chat.views import test, token, main
 
 urlpatterns = [
-    url(r'^test', test),
-    url(r'^token', token),
-    url(r'^admin', admin.site.urls),
-    url(r'^', main),
+    url(r'^test$', test),
+    url(r'^token$', token),
+    url(r'^admin$', admin.site.urls),
+    url(r'^$', main),
 ]
