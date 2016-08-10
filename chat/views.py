@@ -23,7 +23,7 @@ def test(request):
       
 def main(request):
     if request.method=='GET':
-        return render(request,'index.html',{})
+        return render(request,'chat.html',{})
       
 @login_required
 def token(request):

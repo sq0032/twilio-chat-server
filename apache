@@ -9,10 +9,9 @@ WSGIPythonPath /app
         # value is not decisive as it is used as a last resort host regardless.
         # However, you must set it for any further virtual host explicitly.
         #ServerName www.example.com
-        Alias /frontend/admin "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin"
-        Alias /frontend/rest_framework_swagger "/usr/local/lib/python2.7/dist-packages/rest_framework_swagger/static/rest_framework_swagger"
-        Alias /frontend /app/frontend
-        Alias /static /app/static
+        Alias /static/admin "/usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin"
+        Alias /static/rest_framework_swagger "/usr/local/lib/python2.7/dist-packages/rest_framework_swagger/static/rest_framework_swagger"
+        Alias /static /app/frontend
         <Directory /app/static>
             Require all granted
         </Directory>
@@ -31,14 +30,6 @@ WSGIPythonPath /app
             </Files>
         </Directory>
         
-        <Directory /app/frontend/public>
-            Require all granted
-        </Directory>
-
-        <Directory /app/frontend/node_modules>
-            Require all granted
-        </Directory>
-
         WSGIScriptAlias / /app/chat/wsgi.py
         #WSGIPythonPath /app
 
